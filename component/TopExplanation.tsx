@@ -1,16 +1,16 @@
-import {Grid, Typography} from "@mui/material";
+import {Grid} from "@mui/material";
 import React from "react";
 import {CIRCLE_COLOR} from "../const";
 import Link from "next/link";
 import Hover from "./Hover";
 
 const TopExplanation = ()=>{
-    return <div style={{width:"100%",backgroundColor:"white",padding:30,borderRadius:20,textAlign:"center"}}>
+    return <div style={{width:"100%",backgroundColor:"white",padding:30,borderRadius:20,textAlign:"center",letterSpacing:0.2}}>
         <div style={{marginTop:30,fontSize:25,fontWeight:400,color:CIRCLE_COLOR}}>
             電子計算機研究会 通称: Den3は<br/>芝浦工業大学で活動する<wbr/>プログラミング系サークルです
         </div>
         <div style={{marginTop:20,fontSize:18,fontWeight:400}}>
-            競技プログラミング,ゲーム制作,WEBアプリ開発,機械学習研究などを行っています
+            競技プログラミング, ゲーム制作, WEBアプリ開発, 機械学習研究 などを行っています
         </div>
         <Grid container justifyContent="center" style={{width:"100%",marginTop:40,textAlign:"center"}}>
             <Grid item>

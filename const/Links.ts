@@ -14,12 +14,14 @@ export const Links:BlogPageLink[] = [{
     url:"/activity_content",
     tag:"活動内容",
 },{
-    url:"/page/0",
+    url:"/blog/page/0",
     tag:"活動ブログ",
-},{
-    url:"/production",
-    tag:"制作物",
-},{
+},
+//     {
+//     url:"/production",
+//     tag:"制作物",
+// },
+    {
     url:"/link",
     tag:"おすすめリンク",
 }]

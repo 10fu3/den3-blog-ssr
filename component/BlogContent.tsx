@@ -1,9 +1,8 @@
 import React from "react";
-import {Avatar, Divider, Grid, Hidden, ListItem, ListItemAvatar, ListItemText} from "@mui/material";
+import {Divider, Grid, Hidden} from "@mui/material";
 import {ArticleHeader} from "./ArticleHeader";
 import StyledMarkdown from "./StyledMarkdown";
 import CommentBox from "./CommentBox";
-import {GITHUB_ICON, TWITTER_ICON} from "../const/Icon";
 import ExternalLinksCard from "./ExternalLinksCard";
 import AuthorCard from "./AuthorCard";
 
@@ -17,7 +16,8 @@ export interface BlogAuthor {
 
 export interface BlogContentComment {
     author:BlogAuthor,
-    body:string
+    body:string,
+    date:string
 }
 
 export interface BlogContentProps {
@@ -25,13 +25,14 @@ export interface BlogContentProps {
     title:string,
     header_img?:string,
     author:BlogAuthor,
-    comment: BlogContentComment[]
+    comment: BlogContentComment[],
+    canComment?:boolean
 }
 
 const BlogContent:React.FC<BlogContentProps> = (props)=>{
     return <Grid container justifyContent="center" style={{width:"100%"}}>
         <Grid item style={{width:"100%",maxWidth:"1120px",paddingBottom:64}}>
-            <ArticleHeader>
+            <ArticleHeader img={props.header_img}>
                 {props.title}
             </ArticleHeader>
             <Hidden lgUp>
@@ -71,16 +72,18 @@ const BlogContent:React.FC<BlogContentProps> = (props)=>{
                                 </div>
                             </Grid>
                         </Grid>
-                        <Grid container style={{marginTop:40}}>
-                            <Grid item style={{width:"100%",maxWidth:790,backgroundColor:"white",padding:10,borderRadius:"12px",float:"left"}}>
-                                <CommentBox comment={props.comment}/>
-                            </Grid>
-                        </Grid>
+                        {
+                            props.canComment ? <Grid container style={{marginTop:40}}>
+                                <Grid item style={{width:"100%",maxWidth:790,backgroundColor:"white",padding:10,borderRadius:"12px",float:"left"}}>
+                                    <CommentBox comment={props.comment}/>
+                                </Grid>
+                            </Grid> : <></>
+                        }
                     </Grid>
                     <Grid item style={{height:"calc(100%)",marginLeft:30}}>
                         <div style={{width:"300px",height:"100%"}}>
                             <div style={{width:"300px",float:"left",position:"sticky",top:30,bottom:200}}>
-                                <div style={{backgroundColor:"white",borderRadius:"12px",marginBottom:32,padding:20}}>
+                                <div style={{backgroundColor:"white",borderRadius:"12px",marginBottom:40,padding:20}}>
                                     <AuthorCard author={props.author}/>
                                 </div>
                                 <div style={{backgroundColor:"white",borderRadius:"12px",padding:10}}>

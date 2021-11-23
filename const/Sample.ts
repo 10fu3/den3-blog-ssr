@@ -187,37 +187,56 @@ export const SampleBlogList:BlogListEntity[] = [
     },{
         date: "",
         id: "",
-        thumbnail: "",
-        title: ""
-    },{
-        date: "",
-        id: "",
-        thumbnail: "",
-        title: ""
-    },{
-        date: "",
-        id: "",
-        thumbnail: "",
-        title: ""
-    },{
-        date: "",
-        id: "",
-        thumbnail: "",
-        title: ""
-    },{
-        date: "",
-        id: "",
-        thumbnail: "",
-        title: ""
-    },{
-        date: "",
-        id: "",
-        thumbnail: "",
-        title: ""
-    },{
-        date: "",
-        id: "",
-        thumbnail: "",
-        title: ""
+        thumbnail: "http://den3.net/wp-content/uploads/2020/06/character_program_shutdown-300x300.png",
+        title: "夏休みやりたいこと！！"
     }
 ]
+
+
+export const SampleMarkdown = `
+## はじめに
+お久しぶりです、うぇいるです。　ブログを書くのをサボっていたのですが、AtCoderの色が変わったのでさすがに書かないとな…ということで色変記事を書きます。
+
+## 水色になるまで
+新入生ブログリレーの際に入緑の記事を書きました。そこから大体4か月くらいで水色になれました。
+
+初めて参加したコンテストが4/24だったので半年＋一週間で入水することができました～
+
+入緑直後まではPythonで参加していたのですが、夏休みにC++を勉強しそれ以降はC++で参加しています。ACLが使えてとても楽です。(Pythonが書けなくなりました)
+
+水になるまでのAccepted数は638でした。緑になるまでのAccepted数が196だったので442問新たに解いたことになります。大体一か月に100問ペースくらい？で過去問埋めをしていたことになりますね。来年四月までにはAccepted数4桁行きたいです。
+
+## やったこと
+典型90の☆4以下全埋めをしました。めちゃくちゃ勉強になりました、おすすめです。
+
+あとはAtCoder problemsのRecommendationをひたすら解いていった感じです。
+
+![](http://den3.net/wp-content/uploads/2021/10/whileirohen2-1024x277.jpg) 
+
+こんな感じです。青はほぼ埋めてません＞＜
+
+## 終わりに
+競技プログラミングは合う人と合わない人がいると思います。
+
+問題を解くよりゲームとかアプリを開発したい！みたいな人にはなかなか難しいですよね。
+
+
+
+そんな人でも、ヒューリスティックコンテストなら楽しめるのではないでしょうか？
+
+ヒューリスティックコンテストは、出題される問題に対してより良いスコアを出せるプログラムを書くコンテストです。ビジュアライザが用意されているのでどういう手順でスコアを稼いでいるかの過程が眺められたりしてゲーム要素が強いコンテストだと僕は思っています。
+
+AtCoderを辞めよう…なんて思ってる人！　もしかしたらヒューリスティックコンテストはハマるかもしれませんよ？
+
+直近だと…
+
+- HACK TO THE FUTURE 2022 予選
+
+- Hitachi Hokudai Lab. & Hokkaido University Contest 2021
+
+- AtCoder Heuristic Contest 006
+
+などがあります。
+
+興味を持ったらぜひ参加してみてください！
+`

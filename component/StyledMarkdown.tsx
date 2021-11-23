@@ -52,16 +52,16 @@ const StyledMarkdown:NextPage<{markdown:string}> = (props)=>{
             li: ({node, ...props}) => <li style={{color:"#333",fontWeight:"bold",listStyleType:"square",wordBreak:"break-all"}}>
                 {props.children}
             </li>,
-            table: ({node, ...props}) => <table style={{width:"100%",wordBreak:"break-all"}}>
+            table: ({node, ...props}) => <table style={{width:"100%",borderCollapse:"collapse",wordBreak:"break-all"}}>
                 {props.children}
             </table>,
-            thead: ({node, ...props}) => <thead style={{border:"black",wordBreak:"break-all"}}>
+            thead: ({node, ...props}) => <thead style={{wordBreak:"break-all"}}>
                 {props.children}
             </thead>,
-            th: ({node, ...props}) => <th style={{backgroundColor:"#93cbe2",border:"solid 1px #d0d0d0",padding:3,color:"#333",wordBreak:"break-all"}}>
+            th: ({node, ...props}) => <th style={{backgroundColor:"#93cbe2",border:"solid 1px #d0d0d0",padding:3,color:"#2c2c2c",wordBreak:"break-all"}}>
                 {props.children}
             </th>,
-            td: ({node, ...props}) => <td style={{backgroundColor:"white",border:"solid 1px #d0d0d0",textAlign:"center",padding:3,color:"#333",wordBreak:"break-all"}}>
+            td: ({node, ...props}) => <td style={{backgroundColor:"white",border:"solid 1px #d0d0d0",textAlign:"center",padding:6,color:"#2c2c2c",wordBreak:"break-all"}}>
                 {props.children}
             </td>
         }}
