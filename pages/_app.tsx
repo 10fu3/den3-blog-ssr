@@ -1,8 +1,19 @@
-import '../styles/globals.css'
+import '../styles/globals.scss'
 import type { AppProps } from 'next/app'
+import TopBar from "../component/TopBar";
+import {Card, Grid} from "@mui/material";
+import Footer from "../component/Footer";
 
-function MyApp({ Component, pageProps }: AppProps) {
-  return <Component {...pageProps} />
+function App({ Component, pageProps }: AppProps) {
+  return <div>
+    <Grid container justifyContent="center" style={{width:"100%"}}>
+      <Grid item style={{width:"100%"}}>
+        <TopBar/>
+        <Component {...pageProps} />
+        <Footer/>
+      </Grid>
+    </Grid>
+  </div>
 }
 
-export default MyApp
+export default App
