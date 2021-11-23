@@ -1,6 +1,6 @@
 import {GetStaticProps, NextPage} from "next";
 import StyledMarkdown from "../component/StyledMarkdown";
-import {API_HOST} from "../const/Links";
+import {STATIC_API_HOST} from "../const/Links";
 import {useEffect, useState} from "react";
 import {Avatar, Grid, Hidden, ListItem, ListItemAvatar, ListItemText, Typography} from "@mui/material";
 import {ArticleHeader} from "../component/ArticleHeader";
@@ -13,7 +13,7 @@ import BlogContent from "../component/BlogContent";
 // ビルド時に実行される
 export const getStaticProps: GetStaticProps<{markdown:string|undefined,status:'error'|'success',message:string|null}> = async (context) => {
 
-    const res = await fetch(API_HOST+'information.json')
+    const res = await fetch(STATIC_API_HOST+'information.json')
 
     if(res.status !== 200){
         return {
@@ -26,7 +26,7 @@ export const getStaticProps: GetStaticProps<{markdown:string|undefined,status:'e
     }else{
         const url:{description:undefined} = await res.json()
 
-        const description = await fetch(API_HOST+url.description)
+        const description = await fetch(STATIC_API_HOST+url.description)
 
         if(description.status !== 200){
             return {

@@ -1,4 +1,6 @@
-export const API_HOST = 'https://den-3.github.io/den3-blog-static/api/v1/';
+export const STATIC_API_HOST = 'https://den-3.github.io/den3-blog-static/api/v1/';
+
+export const API_HOST = '';
 
 export interface BlogPageLink {
     url:string,
