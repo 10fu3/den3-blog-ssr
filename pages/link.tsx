@@ -1,6 +1,6 @@
 import {GetStaticProps, NextPage} from "next";
 import {STATIC_API_HOST} from "../const/Links";
-import BlogContent from "../component/BlogContent";
+import BlogContent from "../component/blog/BlogContent";
 
 interface Props {
     markdown:string|undefined,

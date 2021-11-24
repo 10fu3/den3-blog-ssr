@@ -1,5 +1,5 @@
 import {NextPage} from "next";
-import {MiddleText} from "./TextComponent";
+import {MiddleText} from "./blog/TextComponent";
 import {Divider, Grid} from "@mui/material";
 import Link from "next/link";
 

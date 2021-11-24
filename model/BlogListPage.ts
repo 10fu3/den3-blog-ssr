@@ -1,4 +1,4 @@
-import {BlogAuthor} from "../component/BlogContent";
+import {BlogAuthor} from "../component/blog/BlogContent";
 
 export interface BlogListEntity{
     thumbnail:string,

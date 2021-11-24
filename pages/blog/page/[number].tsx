@@ -2,7 +2,7 @@ import {GetServerSideProps, NextPage} from "next";
 import {useRouter} from "next/router";
 import {SampleBlogList} from "../../../const/Sample";
 import {BlogListEntity} from "../../../model/BlogListPage";
-import BlogListComponent from "../../../component/BlogListComponent";
+import BlogListComponent from "../../../component/blog/BlogListComponent";
 import {Grid} from "@mui/material";
 import Pagination from "../../../component/Pagination";
 

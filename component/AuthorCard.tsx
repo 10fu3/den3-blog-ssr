@@ -1,5 +1,5 @@
 import React from "react";
-import {BlogAuthor} from "./BlogContent";
+import {BlogAuthor} from "./blog/BlogContent";
 import {Avatar, Grid, ListItem, ListItemAvatar, ListItemText} from "@mui/material";
 import {GITHUB_ICON, TWITTER_ICON} from "../const/Icon";
 import Link from "next/link";

@@ -1,8 +1,8 @@
 import React from "react";
-import {BlogListEntity} from "../model/BlogListPage";
+import {BlogListEntity} from "../../model/BlogListPage";
 
 
-import HoverBlogItem from "./HoverBlogItem";
+import HoverBlogItem from "../HoverBlogItem";
 import {Grid} from "@mui/material";
 import { Swiper, SwiperSlide } from 'swiper/react';
 import SwiperCore, { Navigation, Pagination } from 'swiper';

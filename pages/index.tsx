@@ -1,6 +1,6 @@
 import {NextPage} from "next";
 import {ArticleInfo} from "../model/ArticleInfo";
-import Slide from "../component/Slide";
+import Slide from "../component/blog/Slide";
 import {BlogListEntity} from "../model/BlogListPage";
 import TopExplanation from "../component/top/TopExplanation";
 import TopNews from "../component/top/TopNews";

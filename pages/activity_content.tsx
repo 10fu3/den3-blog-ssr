@@ -1,14 +1,14 @@
 import {GetStaticProps, NextPage} from "next";
-import StyledMarkdown from "../component/StyledMarkdown";
+import StyledMarkdown from "../component/blog/StyledMarkdown";
 import {STATIC_API_HOST} from "../const/Links";
 import {useEffect, useState} from "react";
 import {Avatar, Grid, Hidden, ListItem, ListItemAvatar, ListItemText, Typography} from "@mui/material";
-import {ArticleHeader} from "../component/ArticleHeader";
+import {ArticleHeader} from "../component/blog/ArticleHeader";
 import {GITHUB_ICON, TWITTER_ICON} from "../const/Icon";
 import TwitterTimeline from "../component/TwitterTimeline";
 import ExternalLinksCard from "../component/ExternalLinksCard";
-import CommentBox from "../component/CommentBox";
-import BlogContent from "../component/BlogContent";
+import CommentBox from "../component/blog/CommentBox";
+import BlogContent from "../component/blog/BlogContent";
 
 // ビルド時に実行される
 export const getStaticProps: GetStaticProps<{markdown:string|undefined,status:'error'|'success',message:string|null}> = async (context) => {

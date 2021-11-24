@@ -3,8 +3,8 @@ import {Divider, Grid, Hidden} from "@mui/material";
 import {ArticleHeader} from "./ArticleHeader";
 import StyledMarkdown from "./StyledMarkdown";
 import CommentBox from "./CommentBox";
-import ExternalLinksCard from "./ExternalLinksCard";
-import AuthorCard from "./AuthorCard";
+import ExternalLinksCard from "../ExternalLinksCard";
+import AuthorCard from "../AuthorCard";
 
 export interface BlogAuthor {
     id:string,

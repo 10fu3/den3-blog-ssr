@@ -1,5 +1,5 @@
 import {GetServerSideProps, GetStaticPaths, NextPage} from "next";
-import BlogContent, {BlogContentProps} from "../../../component/BlogContent";
+import BlogContent, {BlogContentProps} from "../../../component/blog/BlogContent";
 import {SampleMarkdown, SampleMarkdownCode} from "../../../const/Sample";
 
 // export const getStaticPaths:GetStaticPaths = async ()=>{

@@ -3,7 +3,7 @@ import {ReactMarkdown} from "react-markdown/lib/react-markdown";
 import {NextPage} from "next";
 import remarkGfm from "remark-gfm";
 import {BigText, MiddleText} from "./TextComponent";
-import {CIRCLE_COLOR} from "../const";
+import {CIRCLE_COLOR} from "../../const";
 
 import { tomorrow } from 'react-syntax-highlighter/dist/cjs/styles/prism';
 
