@@ -4,11 +4,15 @@ import {NextPage} from "next";
 import remarkGfm from "remark-gfm";
 import {BigText, MiddleText} from "./TextComponent";
 import {CIRCLE_COLOR} from "../../const";
+import rehypeKatex from 'rehype-katex'
+import remarkMath from 'remark-math'
+import 'katex/dist/katex.min.css'
 
 import { tomorrow } from 'react-syntax-highlighter/dist/cjs/styles/prism';
 
 import {Prism as SyntaxHighlighter} from 'react-syntax-highlighter'
 import Link from "next/link";
+import remarkToc from "remark-toc";
 
 export const H1:NextPage = (props)=>{
 
@@ -41,7 +45,7 @@ const StyledMarkdown:NextPage<{markdown:string}> = (props)=>{
     return <ReactMarkdown
         components={{
             // Map `h1` (`# heading`) to use `h2`s.
-            h1: ({node, ...props}) => <p style={{wordBreak:"break-all"}}>{props.children}</p>,
+            h1: ({node, ...props}) => <div><h1 style={{fontSize:"1.7em",color:"#353535",padding:".25em .5em",marginTop:64,marginBottom:17,borderLeft:"4px solid "+CIRCLE_COLOR,wordBreak:"break-all"}}>{props.children}</h1><Divider/></div>,
 
             h2: ({node, ...props}) => <div><h1 style={{fontSize:"1.7em",color:"#353535",padding:".25em .5em",marginTop:64,marginBottom:17,borderLeft:"4px solid "+CIRCLE_COLOR,wordBreak:"break-all"}}>{props.children}</h1><Divider/></div>,
 
@@ -56,7 +60,7 @@ const StyledMarkdown:NextPage<{markdown:string}> = (props)=>{
                     {props.children}
                 </a>
             </Link>,
-            li: ({node, ...props}) => <li style={{color:"#333",fontWeight:"bold",listStyleType:"square",wordBreak:"break-all"}}>
+            li: ({node, ...props}) => <li style={{color:"#333",fontWeight:"bold",wordBreak:"break-all"}}>
                 {props.children}
             </li>,
             table: ({node, ...props}) => <table style={{width:"100%",borderCollapse:"collapse",wordBreak:"break-all"}}>
@@ -71,21 +75,27 @@ const StyledMarkdown:NextPage<{markdown:string}> = (props)=>{
             td: ({node, ...props}) => <td style={{backgroundColor:"white",border:"solid 1px #d0d0d0",textAlign:"center",padding:6,color:"#2c2c2c",wordBreak:"break-all"}}>
                 {props.children}
             </td>,
+            blockquote: ({node, ...props}) => <blockquote>
+                <p style={{paddingLeft:10,borderLeft:"4px solid rgb(210,210,210)"}}>
+                    {props.children}
+                </p>
+            </blockquote>,
             code: function({node, inline, className, children, ...props1}) {
-                const match = /language-(\w+)/.exec(className || '');
-                const lang:string = match && match[1] ? match[1] : '';
-                return !inline && match ? (
-                    <SyntaxHighlighter style={tomorrow} language={lang} PreTag="div" wrapLines={true} showLineNumbers={true}>
-                        {String(children).replace(/\n$/, '')}
-                    </SyntaxHighlighter>
-                ) : (
-                    <code className={className} {...props}>
-                        {children}
-                    </code>
-                )
+            const match = /language-(\w+)/.exec(className || '');
+            const lang:string = match && match[1] ? match[1] : '';
+            return !inline && match ? (
+                <SyntaxHighlighter style={tomorrow} language={lang} PreTag="div" wrapLines={true} showLineNumbers={true}>
+                    {String(children).replace(/\n$/, '')}
+                </SyntaxHighlighter>
+            ) : (
+                <code className={className} {...props}>
+                    {children}
+                </code>
+            )
             }
         }}
-        remarkPlugins={[remarkGfm]}
+        remarkPlugins={[remarkGfm,remarkMath,remarkToc]}
+        rehypePlugins={[rehypeKatex]}
     >
         {props.markdown}
     </ReactMarkdown>

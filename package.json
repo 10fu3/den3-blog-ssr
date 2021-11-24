@@ -19,7 +19,10 @@
     "react-markdown": "^7.1.0",
     "react-syntax-highlighter": "^15.4.5",
     "react-twitter-widgets": "^1.10.0",
+    "rehype-katex": "^6.0.2",
     "remark-gfm": "^3.0.1",
+    "remark-math": "^5.1.1",
+    "remark-toc": "^8.0.1",
     "swiper": "^7.3.0"
   },
   "devDependencies": {
