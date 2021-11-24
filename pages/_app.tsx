@@ -1,6 +1,6 @@
 import '../styles/globals.scss'
 import type { AppProps } from 'next/app'
-import TopBar from "../component/TopBar";
+import TopBar from "../component/top/TopBar";
 import {Card, Grid} from "@mui/material";
 import Footer from "../component/Footer";
 

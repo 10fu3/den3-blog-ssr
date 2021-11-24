@@ -11,7 +11,7 @@ const Footer = ()=>{
                     <div>
                         <TwitterTimeline/>
                     </div>
-                    <div style={{backgroundColor:"white",borderRadius:"12px",marginTop:20,padding:10}}>
+                    <div style={{backgroundColor:"white",borderRadius:"5px",marginTop:15,padding:10}}>
                         <ExternalLinksCard/>
                     </div>
                 </Grid>

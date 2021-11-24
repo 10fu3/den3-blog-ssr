@@ -2,11 +2,11 @@ import {NextPage} from "next";
 import {ArticleInfo} from "../model/ArticleInfo";
 import Slide from "../component/Slide";
 import {BlogListEntity} from "../model/BlogListPage";
-import TopExplanation from "../component/TopExplanation";
-import TopNews from "../component/TopNews";
+import TopExplanation from "../component/top/TopExplanation";
+import TopNews from "../component/top/TopNews";
 import React from "react";
 import {Card, Grid} from "@mui/material";
-import TopBlogList from "../component/TopBlogList";
+import TopBlogList from "../component/top/TopBlogList";
 
 const Home:NextPage = ()=>{
 
