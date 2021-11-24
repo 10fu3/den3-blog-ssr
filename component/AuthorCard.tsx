@@ -10,7 +10,11 @@ const AuthorCard:React.FC<{author:BlogAuthor}> = (props)=>{
             <ListItemAvatar>
                 <Avatar style={{backgroundColor:"#000"}} alt="Remy Sharp" src={props.author.avatar} />
             </ListItemAvatar>
-            <ListItemText primary={props.author.name} secondary={props.author.bio}/>
+            <ListItemText primary={<>
+                <Link href={'/blog/author/'+props.author.id}>
+                    <a style={{fontWeight:"bold",color:"#303030"}}>{props.author.name}</a>
+                </Link>
+            </>} secondary={props.author.bio}/>
         </ListItem>
         <Grid container justifyContent="space-around" style={{width:"100%",marginTop:20}}>
             {

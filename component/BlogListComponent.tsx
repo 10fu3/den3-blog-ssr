@@ -2,6 +2,7 @@ import React from "react";
 import {Grid} from "@mui/material";
 import HoverBlogItem from "./HoverBlogItem";
 import {BlogListEntity} from "../model/BlogListPage";
+import Pagination from "./Pagination";
 
 const BlogListComponent:React.FC<{e:BlogListEntity[]}> = (props)=>{
     return <div>
@@ -15,7 +16,6 @@ const BlogListComponent:React.FC<{e:BlogListEntity[]}> = (props)=>{
                 }) : <></>
             }
         </Grid>
-        <div></div>
     </div>
 }
 

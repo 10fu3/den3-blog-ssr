@@ -7,6 +7,7 @@ import ExternalLinksCard from "./ExternalLinksCard";
 import AuthorCard from "./AuthorCard";
 
 export interface BlogAuthor {
+    id:string,
     name:string,
     avatar:string,
     bio:string,
@@ -31,26 +32,42 @@ export interface BlogContentProps {
 
 const BlogContent:React.FC<BlogContentProps> = (props)=>{
     return <Grid container justifyContent="center" style={{width:"100%"}}>
-        <Grid item style={{width:"100%",maxWidth:"1120px",paddingBottom:64}}>
+        <Grid item style={{width:"100%",maxWidth:"1120px",paddingBottom:32}}>
             <ArticleHeader img={props.header_img}>
                 {props.title}
             </ArticleHeader>
             <Hidden lgUp>
                 <Grid container justifyContent="center" style={{width:"100%"}}>
-                    <Grid item style={{backgroundColor:"white",borderRadius:"12px"}}>
-                        <div>
-                            <Grid item style={{width:"calc(100% - 80px)",maxWidth:"790px",margin:"64px 40px"}}>
-                                <StyledMarkdown markdown={props.markdown}/>
-                                <div style={{marginTop:20,marginBottom:20}}>
-                                    <Divider/>
-                                </div>
-                                <Grid container justifyContent="center">
-                                    <Grid item style={{marginTop:20}}>
+                    <Grid item style={{width:"100%"}}>
+                        <Grid item style={{width:"calc(100%)"}}>
+                            <Grid container style={{width:"calc(100%)"}} justifyContent="center">
+                                <Grid item style={{width:"calc(100%)",maxWidth:790}}>
+                                    <div style={{width:"calc(100%)",backgroundColor:"white",borderRadius:"12px",padding:30}}>
+                                        <StyledMarkdown markdown={props.markdown}/>
+                                        <div style={{marginTop:50,marginBottom:20}}>
+                                            <Divider/>
+                                        </div>
                                         <AuthorCard author={props.author}/>
+                                    </div>
+                                    <Grid container justifyContent="center">
+                                        <Grid item style={{marginTop:20}}>
+                                            {
+                                                props.canComment ? <Grid container style={{marginTop:40}}>
+                                                    <Grid item style={{width:"100%",maxWidth:790,backgroundColor:"white",padding:10,borderRadius:"12px",float:"left"}}>
+                                                        <CommentBox comment={props.comment}/>
+                                                    </Grid>
+                                                </Grid> : <></>
+                                            }
+                                        </Grid>
+                                    </Grid>
+                                    <Grid container justifyContent="center">
+                                        <Grid item style={{marginTop:60,width:"calc(100%)",backgroundColor:"white",borderRadius:12,padding:30}}>
+                                            <ExternalLinksCard/>
+                                        </Grid>
                                     </Grid>
                                 </Grid>
                             </Grid>
-                        </div>
+                        </Grid>
                     </Grid>
                 </Grid>
             </Hidden>
@@ -61,7 +78,7 @@ const BlogContent:React.FC<BlogContentProps> = (props)=>{
                             <Grid item>
                                 <div style={{width:"100%",maxWidth:790,backgroundColor:"white",padding:40,borderRadius:"12px",float:"left"}}>
                                     <StyledMarkdown markdown={props.markdown}/>
-                                    <div style={{marginTop:20,marginBottom:20}}>
+                                    <div style={{marginTop:50,marginBottom:20}}>
                                         <Divider/>
                                     </div>
                                     <Grid container justifyContent="center">
@@ -86,9 +103,9 @@ const BlogContent:React.FC<BlogContentProps> = (props)=>{
                                 <div style={{backgroundColor:"white",borderRadius:"12px",marginBottom:40,padding:20}}>
                                     <AuthorCard author={props.author}/>
                                 </div>
-                                <div style={{backgroundColor:"white",borderRadius:"12px",padding:10}}>
-                                    <ExternalLinksCard/>
-                                </div>
+                                {/*<div style={{backgroundColor:"white",borderRadius:"12px",padding:10}}>*/}
+                                {/*    <ExternalLinksCard/>*/}
+                                {/*</div>*/}
                             </div>
                         </div>
                     </Grid>

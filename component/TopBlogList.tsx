@@ -20,7 +20,7 @@ const TopBlogList = (d:{e:BlogListEntity[]})=>{
         </Grid>
         <Grid container justifyContent="center" style={{width:"100%",marginTop:40,textAlign:"center"}}>
             <Grid item>
-                <Link href="/blog/page/0">
+                <Link href="/blog/page/1">
                     <a>
                         <Hover onHover={<div style={{backgroundColor:"#333",padding:"10px 40px",color:"white"}}>記事一覧へ</div>}>
                             <div style={{backgroundColor:CIRCLE_COLOR,padding:"10px 40px",color:"white"}}>記事一覧へ</div>

@@ -1,14 +1,18 @@
 import {Grid} from "@mui/material";
 import React from "react";
 import TwitterTimeline from "./TwitterTimeline";
+import ExternalLinksCard from "./ExternalLinksCard";
 
 const Footer = ()=>{
     return <Grid container style={{width:"100%",backgroundColor:"#333"}} justifyContent="center">
         <Grid item style={{width:"100%",maxWidth:"1120px",padding:"20px 0px"}}>
-            <Grid container justifyContent="space-around">
-                <Grid item>
-                    <div style={{padding:26}}>
+            <Grid container alignContent="center" justifyContent="space-around">
+                <Grid item style={{marginLeft:20}}>
+                    <div>
                         <TwitterTimeline/>
+                    </div>
+                    <div style={{backgroundColor:"white",borderRadius:"12px",marginTop:20,padding:10}}>
+                        <ExternalLinksCard/>
                     </div>
                 </Grid>
                 <Grid item>

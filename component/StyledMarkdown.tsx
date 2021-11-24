@@ -5,6 +5,11 @@ import remarkGfm from "remark-gfm";
 import {BigText, MiddleText} from "./TextComponent";
 import {CIRCLE_COLOR} from "../const";
 
+import { tomorrow } from 'react-syntax-highlighter/dist/cjs/styles/prism';
+
+import {Prism as SyntaxHighlighter} from 'react-syntax-highlighter'
+import Link from "next/link";
+
 export const H1:NextPage = (props)=>{
 
    return <div style={{marginTop:20}}>
@@ -31,8 +36,8 @@ export const H2:NextPage = (props)=>{
         </MiddleText>
     </div>
 }
-
 const StyledMarkdown:NextPage<{markdown:string}> = (props)=>{
+
     return <ReactMarkdown
         components={{
             // Map `h1` (`# heading`) to use `h2`s.
@@ -46,9 +51,11 @@ const StyledMarkdown:NextPage<{markdown:string}> = (props)=>{
             img: ({node, ...props}) => <img src={props.src} style={{width:"100%",height:"auto"}}>
                 {props.children}
             </img>,
-            a: ({node, ...props}) => <a href={props.href} style={{textDecoration:"underline",wordBreak:"break-all"}}>
-                {props.children}
-            </a>,
+            a: ({node, ...props}) => <Link href={props.href ? props.href : ''}>
+                <a style={{textDecoration:"underline",color:"rgb(51,136,255)",wordBreak:"break-all"}}>
+                    {props.children}
+                </a>
+            </Link>,
             li: ({node, ...props}) => <li style={{color:"#333",fontWeight:"bold",listStyleType:"square",wordBreak:"break-all"}}>
                 {props.children}
             </li>,
@@ -63,7 +70,20 @@ const StyledMarkdown:NextPage<{markdown:string}> = (props)=>{
             </th>,
             td: ({node, ...props}) => <td style={{backgroundColor:"white",border:"solid 1px #d0d0d0",textAlign:"center",padding:6,color:"#2c2c2c",wordBreak:"break-all"}}>
                 {props.children}
-            </td>
+            </td>,
+            code: function({node, inline, className, children, ...props1}) {
+                const match = /language-(\w+)/.exec(className || '');
+                const lang:string = match && match[1] ? match[1] : '';
+                return !inline && match ? (
+                    <SyntaxHighlighter style={tomorrow} language={lang} PreTag="div" wrapLines={true} showLineNumbers={true}>
+                        {String(children).replace(/\n$/, '')}
+                    </SyntaxHighlighter>
+                ) : (
+                    <code className={className} {...props}>
+                        {children}
+                    </code>
+                )
+            }
         }}
         remarkPlugins={[remarkGfm]}
     >

@@ -9,10 +9,10 @@ const TopBarLogo:NextComponentType = ()=>{
         </Grid>
         <Grid item style={{width:10,height:48,marginLeft:10,backgroundColor:CIRCLE_COLOR}}/>
         <Grid item style={{marginLeft:10,color:CIRCLE_COLOR}}>
-            <Typography style={{fontWeight:"bold"}}>
+            <Typography style={{fontWeight:"bold",fontFamily:"mame4"}}>
                 芝浦工業大学
             </Typography>
-            <Typography style={{fontWeight:"bold"}}>
+            <Typography style={{fontWeight:"bold",fontFamily:"mame4"}}>
                 電子計算機研究会
             </Typography>
         </Grid>
