@@ -1,6 +1,6 @@
 import {NextComponentType} from "next";
 import {Grid, Typography} from "@mui/material";
-import {CIRCLE_COLOR, LOGO} from "../const";
+import {CIRCLE_COLOR, LOGO} from "../../const";
 
 const TopBarLogo:NextComponentType = ()=>{
     return <Grid container>

@@ -1,8 +1,8 @@
 import {Grid} from "@mui/material";
 import React from "react";
-import {CIRCLE_COLOR} from "../const";
+import {CIRCLE_COLOR} from "../../const";
 import Link from "next/link";
-import Hover from "./Hover";
+import Hover from "../Hover";
 
 const TopExplanation = ()=>{
     return <div style={{width:"100%",backgroundColor:"white",padding:30,borderRadius:20,textAlign:"center",letterSpacing:0.2}}>

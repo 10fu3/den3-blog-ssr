@@ -1,11 +1,11 @@
 import {NextComponentType} from "next";
 import {AppBar, Grid, Hidden, Toolbar, Typography} from "@mui/material";
 import TopBarLogo from "./TopBarLogo";
-import {CIRCLE_COLOR} from "../const";
+import {CIRCLE_COLOR} from "../../const";
 import React, {CSSProperties} from "react";
-import Hover from "./Hover";
+import Hover from "../Hover";
 import Link from "next/link";
-import {Links} from "../const/Links";
+import {Links} from "../../const/Links";
 
 const TopBarLink:React.FC<{style?:CSSProperties,link:string,title:string,isMobile?:boolean}> = (props)=>{
 

@@ -1,10 +1,10 @@
-import {BlogListEntity} from "../model/BlogListPage";
+import {BlogListEntity} from "../../model/BlogListPage";
 import React from "react";
 import {Grid} from "@mui/material";
-import HoverBlogItem from "./HoverBlogItem";
+import HoverBlogItem from "../HoverBlogItem";
 import Link from "next/link";
-import Hover from "./Hover";
-import {CIRCLE_COLOR} from "../const";
+import Hover from "../Hover";
+import {CIRCLE_COLOR} from "../../const";
 
 const TopBlogList = (d:{e:BlogListEntity[]})=>{
     return <div style={{paddingBottom:64}}>
