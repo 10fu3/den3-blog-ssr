@@ -1,4 +1,4 @@
-import {GetServerSideProps, GetStaticPaths, GetStaticProps, NextPage} from "next";
+import {GetServerSideProps, NextPage} from "next";
 import {useRouter} from "next/router";
 import {SampleBlogList} from "../../../const/Sample";
 import {BlogListEntity} from "../../../model/BlogListPage";
@@ -32,13 +32,17 @@ const BlogListPage:NextPage<Props> = (props)=>{
     // eslint-disable-next-line react-hooks/rules-of-hooks
     const number = Number(useRouter().query['number'])
 
-    const data = range(number*PER_PAGE,((number+1)*PER_PAGE)-1).map(i=>props.list[i])
+    const data = range((number-1)*PER_PAGE,((number)*PER_PAGE)-1).map(i=>props.list[i])
 
     return <div>
         <Grid container justifyContent="center">
-            <Grid item style={{width:"100%",maxWidth:"1120px",padding:"32px 10px 128px 10px"}}>
+            <Grid item style={{width:"100%",maxWidth:"1120px",padding:"32px 10px 64px 10px"}}>
                 <BlogListComponent e={data}/>
-                <Pagination totalCount={Math.round(props.list.length/PER_PAGE)} currentNum={number}/>
+            </Grid>
+            <Grid container justifyContent="center" style={{marginBottom:64}}>
+                <Grid item>
+                    <Pagination totalCount={props.list.length} currentNum={number}/>
+                </Grid>
             </Grid>
         </Grid>
     </div>

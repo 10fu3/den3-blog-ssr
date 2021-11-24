@@ -1,21 +1,39 @@
-import {GetServerSideProps, NextPage} from "next";
+import {GetServerSideProps, GetStaticPaths, NextPage} from "next";
 import BlogContent, {BlogContentProps} from "../../../component/BlogContent";
-import {SampleMarkdown} from "../../../const/Sample";
+import {SampleMarkdown, SampleMarkdownCode} from "../../../const/Sample";
 
-export const getServerSideProps:GetServerSideProps<BlogContentProps> = async ()=>{
+// export const getStaticPaths:GetStaticPaths = async ()=>{
+//     return {
+//         paths: [{
+//                 params: {
+//                     id: '001'
+//                 }}, {
+//                 params: {
+//                     id: '002'
+//                 }}, {
+//                 params: {
+//                     id: '003'
+//                 }}],
+//         fallback: true
+//     }
+// }
+
+export const getServerSideProps:GetServerSideProps<BlogContentProps> = async (props)=>{
 
     const data:BlogContentProps = {
         author:{
             avatar: "http://den3.net/wp-content/uploads/2021/07/whileicon-150x150.png",
             bio: "誰か、、、変数の名付けのセンスをください、、、、、、、、、",
-            name: "うぇいる"
+            name: "うぇいる",
+            id: '9b458210-c9a3-4f5b-bb4e-baafc3e77569'
         },
         comment: [
             {
                 author:{
                     avatar: "http://den3.net/wp-content/uploads/2021/07/whileicon-150x150.png",
                     bio: "誰か、、、変数の名付けのセンスをください、、、、、、、、、",
-                    name: "うぇいる"
+                    name: "うぇいる",
+                    id: '9b458210-c9a3-4f5b-bb4e-baafc3e77569'
                 },
                 body: "それってあなたの感想ですよね?",
                 date: "2021/02/11 08:10:11"
@@ -23,7 +41,8 @@ export const getServerSideProps:GetServerSideProps<BlogContentProps> = async ()=
                 author:{
                     avatar: "http://den3.net/wp-content/uploads/2021/07/whileicon-150x150.png",
                     bio: "誰か、、、変数の名付けのセンスをください、、、、、、、、、",
-                    name: "うぇいる"
+                    name: "うぇいる",
+                    id: '9b458210-c9a3-4f5b-bb4e-baafc3e77569'
                 },
                 body: "それってあなたの感想ですよね?",
                 date: "2021/02/11 08:10:11"
@@ -31,7 +50,8 @@ export const getServerSideProps:GetServerSideProps<BlogContentProps> = async ()=
                 author:{
                     avatar: "http://den3.net/wp-content/uploads/2021/07/whileicon-150x150.png",
                     bio: "誰か、、、変数の名付けのセンスをください、、、、、、、、、",
-                    name: "うぇいる"
+                    name: "うぇいる",
+                    id: '9b458210-c9a3-4f5b-bb4e-baafc3e77569'
                 },
                 body: "typescript-is では ttypescript 依存の transformer の機能を使用してビルドファイルの中にランタイムチェック関数を生成しますが、type-predicates-generator はトランスパイル前のコードとしてランタイムチェック関数を書き出します。型を変える度にコード生成をする(あるいは watch しておく)デメリットはありますが、挙動は暗黙的になりにくいです\n" +
                     "\n" +
@@ -40,8 +60,8 @@ export const getServerSideProps:GetServerSideProps<BlogContentProps> = async ()=
             }
         ],
         header_img: "http://den3.net/wp-content/uploads/2021/09/bluebird_robot_bot-300x300.png",
-        markdown: SampleMarkdown,
-        title: "【色変】AtCoder水色になりました！"
+        markdown: SampleMarkdownCode,
+        title: "【色変】AtCoder水色になりました！",
     }
 
     return {

@@ -14,7 +14,7 @@ export const Links:BlogPageLink[] = [{
     url:"/activity_content",
     tag:"活動内容",
 },{
-    url:"/blog/page/0",
+    url:"/blog/page/1",
     tag:"活動ブログ",
 },
 //     {
@@ -24,4 +24,7 @@ export const Links:BlogPageLink[] = [{
     {
     url:"/link",
     tag:"おすすめリンク",
+},{
+    url:"/editor",
+    tag:"記事を書く"
 }]
