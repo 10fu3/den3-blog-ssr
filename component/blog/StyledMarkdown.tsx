@@ -6,13 +6,13 @@ import {BigText, MiddleText} from "./TextComponent";
 import {CIRCLE_COLOR} from "../../const";
 import rehypeKatex from 'rehype-katex'
 import remarkMath from 'remark-math'
+import remarkToc from "remark-toc";
 import 'katex/dist/katex.min.css'
 
 import { tomorrow } from 'react-syntax-highlighter/dist/cjs/styles/prism';
 
 import {Prism as SyntaxHighlighter} from 'react-syntax-highlighter'
 import Link from "next/link";
-import remarkToc from "remark-toc";
 
 export const H1:NextPage = (props)=>{
 
