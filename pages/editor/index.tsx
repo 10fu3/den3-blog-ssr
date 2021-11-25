@@ -1,14 +1,19 @@
 import {NextPage} from "next";
-import {AppBar, Card, Grid, Hidden, IconButton, Toolbar} from "@mui/material";
+import {AppBar, Button, Card, Grid, Hidden, IconButton, Switch, Toolbar} from "@mui/material";
 import React, {ChangeEvent, useRef, useState} from "react";
 import {BACK_ARROW_ICON, PEN_ICON, PLAY_ICON} from "../../const/Icon";
 import {useRouter} from "next/router";
 import StyledMarkdown from "../../component/blog/StyledMarkdown";
+import ResizeTextArea from "../../component/blog/ResizeTextArea";
+import {EditorState} from "draft-js";
+import {CIRCLE_COLOR} from "../../const";
 
 const Editor:NextPage = ()=>{
 
     const [title,setTitle] = useState('');
     const [body,setBody] = useState('');
+
+    const [isOpen,setOpen] = useState(false)
 
     const [editorMode,setEditorMode] = useState<boolean>(true)
 
@@ -28,12 +33,22 @@ const Editor:NextPage = ()=>{
                 <IconButton onClick={()=>{router.back()}}>
                     {BACK_ARROW_ICON}
                 </IconButton>
+                <div style={{flexGrow:1}}/>
+                <Switch value={isOpen} onChange={()=>{setOpen(!isOpen)}} />
+                <p style={{color: isOpen ? "#222" : "#555",marginRight:10}}>公開する</p>
+                <Button style={{backgroundColor:CIRCLE_COLOR,fontSize:14,color:"white"}}>
+                    <div style={{margin:5}}>
+                        {
+                            isOpen ? "公開する" : "下書き保存"
+                        }
+                    </div>
+                </Button>
             </Toolbar>
         </div>
         <Grid container justifyContent="center" style={{width:"100%",margin:"27px 0px"}}>
             <Grid item style={{width:880}}>
                 <div style={{padding:"0px 20px"}}>
-                    <textarea style={{
+                    <ResizeTextArea style={{
                         border:"none",
                         width:"100%",
                         resize:"none",
@@ -43,9 +58,9 @@ const Editor:NextPage = ()=>{
                         outline:0,
                         backgroundColor:"rgba(0,0,0,0)"
                     }}
-                              value={title}
-                              placeholder={"タイトル"}
-                              onChange={onChangeTitle}
+                        value={title}
+                        placeholder={"タイトル"}
+                        setValue={setTitle}
                     />
                 </div>
                 <Grid container style={{width:"100%"}}>
@@ -54,20 +69,19 @@ const Editor:NextPage = ()=>{
                             <div style={{padding:"20px 8px",width:"100%",borderRadius:10,backgroundColor:"white"}}>
                                 <div style={{padding:10}}>
                                     {
-                                        editorMode ? <textarea style={{
+                                        editorMode ? <ResizeTextArea style={{
                                             border:"none",
                                             width:"100%",
                                             resize:"none",
                                             minHeight:"56px",
                                             fontSize:15,
                                             outline:0,
-                                            height:"auto",
                                             backgroundColor:"rgba(0,0,0,0)",
                                             fontFamily:"游ゴシック, Yu Gothic, Hiragino Kaku Gothic ProN, ヒラギノ角ゴ ProN W3, sans-serif"
                                         }}
                                             value={body}
                                             placeholder={"マークダウン記法で書いてください"}
-                                            onChange={onChangeBody}
+                                            setValue={setBody}
                                         /> : <StyledMarkdown markdown={body}/>
                                     }
                                 </div>
@@ -98,20 +112,19 @@ const Editor:NextPage = ()=>{
                             <div style={{padding:"20px 8px",width:"100%",borderRadius:10,backgroundColor:"white"}}>
                                 <div style={{padding:10}}>
                                     {
-                                        editorMode ? <textarea style={{
+                                        editorMode ? <ResizeTextArea style={{
                                             border:"none",
                                             width:"100%",
                                             resize:"none",
                                             minHeight:"56px",
                                             fontSize:15,
                                             outline:0,
-                                            height:"auto",
                                             backgroundColor:"rgba(0,0,0,0)",
                                             fontFamily:"游ゴシック, Yu Gothic, Hiragino Kaku Gothic ProN, ヒラギノ角ゴ ProN W3, sans-serif"
                                         }}
                                             value={body}
                                             placeholder={"マークダウン記法で書いてください"}
-                                            onChange={onChangeBody}
+                                            setValue={setBody}
                                         /> : <StyledMarkdown markdown={body}/>
                                     }
                                 </div>

@@ -52,7 +52,7 @@ const StyledMarkdown:NextPage<{markdown:string}> = (props)=>{
             p: ({node, ...props}) => <p style={{color:"#333",fontSize:16,lineHeight:3,marginTop:24,wordBreak:"break-all"}}>
                 {props.children}
             </p>,
-            img: ({node, ...props}) => <img src={props.src} style={{width:"100%",height:"auto"}}>
+            img: ({node, ...props}) => <img src={props.src} style={{width:"auto",height:"auto"}}>
                 {props.children}
             </img>,
             a: ({node, ...props}) => <Link href={props.href ? props.href : ''}>

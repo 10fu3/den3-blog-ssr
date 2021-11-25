@@ -2,6 +2,7 @@ import React from 'react'
 import {Grid, Link} from "@mui/material";
 import {PER_PAGE} from "../pages/blog/page/[number]";
 import {CIRCLE_COLOR} from "../const";
+import Hover from "./Hover";
 
 interface PaginationProps {
     totalCount: number
@@ -82,15 +83,19 @@ export const Pagination:React.FC<PaginationProps> = (props) => {
                             </div>
                         </div>
                     </Grid>: Number(i) === props.currentNum ? <Grid item>
-                        <div style={{width:36,height:36,paddingTop:4,margin:"0px 10px",borderRadius:"50%",color:"white",backgroundColor:CIRCLE_COLOR,textAlign:"center"}}>
+                        <div style={{width:36,height:36,paddingTop:6,margin:"0px 10px",borderRadius:"50%",color:"white",backgroundColor:CIRCLE_COLOR,textAlign:"center"}}>
                             {i}
                         </div>
                     </Grid> : <Grid item>
                         <Link href={'/blog/page/'+(Number(i))} style={{textDecoration:"none"}} key={Math.random()+'-'+Math.random()}>
                             <a>
-                                <div style={{width:36,height:36,paddingTop:4,margin:"0px 10px",borderRadius:"50%",backgroundColor:"white",textAlign:"center",color:"black"}}>
+                                <Hover onHover={<div style={{width:36,height:36,paddingTop:6,margin:"0px 10px",borderRadius:"50%",backgroundColor:"gray",textAlign:"center",color:"white"}}>
                                     {i}
-                                </div>
+                                </div>}>
+                                    <div style={{width:36,height:36,paddingTop:6,margin:"0px 10px",borderRadius:"50%",backgroundColor:"white",textAlign:"center",color:"black"}}>
+                                        {i}
+                                    </div>
+                                </Hover>
                             </a>
                         </Link>
                     </Grid>
