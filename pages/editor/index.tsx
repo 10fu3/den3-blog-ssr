@@ -63,7 +63,7 @@ const Editor:NextPage = ()=>{
                         setValue={setTitle}
                     />
                 </div>
-                <Grid container style={{width:"100%"}}>
+                <Grid container style={{width:"100%",marginTop:32}}>
                     <Hidden smUp>
                         <Grid item style={{width:"calc(100%)",padding:"0px 20px"}}>
                             <div style={{padding:"20px 8px",width:"100%",borderRadius:10,backgroundColor:"white"}}>

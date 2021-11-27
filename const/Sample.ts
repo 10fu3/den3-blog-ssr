@@ -1,5 +1,6 @@
 import {PostInfo} from "../model/PostInfo";
 import {BlogListEntity} from "../model/BlogListPage";
+import {BlogContentProps} from "../component/blog/BlogContent";
 
 export const SampleBlogRelation:PostInfo[] = [
     {
@@ -755,3 +756,109 @@ GSONやJacksonってどうやって動いてるんですか？
 
 次回のお楽しみ.
 `
+
+export const SampleBlogArticle:BlogContentProps[] = [
+    {
+        author:{
+            avatar: "http://den3.net/wp-content/uploads/2021/07/whileicon-150x150.png",
+            bio: "誰か、、、変数の名付けのセンスをください、、、、、、、、、",
+            name: "うぇいる",
+            id: '9b458210-c9a3-4f5b-bb4e-baafc3e77569'
+        },
+        comment: [
+            {
+                author:{
+                    avatar: "http://den3.net/wp-content/uploads/2021/07/whileicon-150x150.png",
+                    bio: "誰か、、、変数の名付けのセンスをください、、、、、、、、、",
+                    name: "うぇいる",
+                    id: '9b458210-c9a3-4f5b-bb4e-baafc3e77569'
+                },
+                body: "それってあなたの感想ですよね?",
+                date: "2021/02/11 08:10:11"
+            },{
+                author:{
+                    avatar: "http://den3.net/wp-content/uploads/2021/07/whileicon-150x150.png",
+                    bio: "誰か、、、変数の名付けのセンスをください、、、、、、、、、",
+                    name: "うぇいる",
+                    id: '9b458210-c9a3-4f5b-bb4e-baafc3e77569'
+                },
+                body: "それってあなたの感想ですよね?",
+                date: "2021/02/11 08:10:11"
+            }
+        ],
+        header_img: "http://den3.net/wp-content/uploads/2021/10/whileirohen-300x205.jpg",
+        markdown: SampleMarkdown,
+        title: "【色変】AtCoder水色になりました！",
+        topics:[
+            {
+                avatar: "https://storage.googleapis.com/zenn-user-upload/topics/b88e6a8ea6.png",
+                id: "atcoder",
+                name: "AtCoder"
+            },
+            {
+                avatar: "https://storage.googleapis.com/zenn-user-upload/topics/b88e6a8ea6.png",
+                id: "atcoder",
+                name: "AtCoder"
+            },
+            {
+                avatar: "https://storage.googleapis.com/zenn-user-upload/topics/b88e6a8ea6.png",
+                id: "atcoder",
+                name: "AtCoder"
+            }
+        ]
+    },{
+        author:{
+            avatar: "http://den3.net/wp-content/uploads/2020/05/%E3%82%B9%E3%82%AF%E3%83%AA%E3%83%BC%E3%83%B3%E3%82%B7%E3%83%A7%E3%83%83%E3%83%88-2020-05-30-22.52.18-150x150.png",
+            bio: "アプリ作ったり競プロしてる2年生 アニメとか声優・アニソンも好き TrySailって知ってる〜？",
+            name: "tofu",
+            id: '84a30db9-616a-4ea1-be3d-3819ffbbb39b'
+        },
+        comment: [
+            {
+                author:{
+                    avatar: "http://den3.net/wp-content/uploads/2021/07/whileicon-150x150.png",
+                    bio: "誰か、、、変数の名付けのセンスをください、、、、、、、、、",
+                    name: "うぇいる",
+                    id: '9b458210-c9a3-4f5b-bb4e-baafc3e77569'
+                },
+                body: "それってあなたの感想ですよね?",
+                date: "2021/02/11 08:10:11"
+            },{
+                author:{
+                    avatar: "http://den3.net/wp-content/uploads/2020/05/%E3%82%B9%E3%82%AF%E3%83%AA%E3%83%BC%E3%83%B3%E3%82%B7%E3%83%A7%E3%83%83%E3%83%88-2020-05-30-22.52.18-150x150.png",
+                    bio: "アプリ作ったり競プロしてる2年生 アニメとか声優・アニソンも好き TrySailって知ってる〜？",
+                    name: "tofu",
+                    id: '84a30db9-616a-4ea1-be3d-3819ffbbb39b'
+                },
+                body: "それってあなたの感想ですよね?",
+                date: "2021/02/11 08:10:11"
+            }
+        ],
+        header_img: "http://den3.net/wp-content/uploads/2021/07/GitHub-Mark-300x300.png",
+        markdown: SampleMarkdownCode,
+        title: "ノンブロッキングIOなHttp Web フレームワークを作った【車輪の再発明】",
+        topics:[
+            {
+                avatar: "https://storage.googleapis.com/zenn-user-upload/topics/5c47bb8423.png",
+                id: "java",
+                name: "Java"
+            },{
+                avatar: "https://storage.googleapis.com/zenn-user-upload/topics/5c47bb8423.png",
+                id: "java",
+                name: "Java"
+            },{
+                avatar: "https://storage.googleapis.com/zenn-user-upload/topics/5c47bb8423.png",
+                id: "java",
+                name: "Java"
+            },{
+                avatar: "https://storage.googleapis.com/zenn-user-upload/topics/5c47bb8423.png",
+                id: "java",
+                name: "Java"
+            },{
+                avatar: "https://storage.googleapis.com/zenn-user-upload/topics/5c47bb8423.png",
+                id: "java",
+                name: "AAAAAAAAAAAAAAAAAAAAAAAAA"
+            }
+        ]
+    }
+]

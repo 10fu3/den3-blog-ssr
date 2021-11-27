@@ -5,6 +5,7 @@ import StyledMarkdown from "./StyledMarkdown";
 import CommentBox from "./CommentBox";
 import ExternalLinksCard from "../ExternalLinksCard";
 import AuthorCard from "../AuthorCard";
+import TopicsCard from "./TopicsCard";
 
 export interface BlogAuthor {
     id:string,
@@ -21,12 +22,19 @@ export interface BlogContentComment {
     date:string
 }
 
+export interface BlogTopics {
+    avatar: string,
+    id: string,
+    name: string
+}
+
 export interface BlogContentProps {
     markdown:string,
     title:string,
     header_img?:string,
     author:BlogAuthor,
     comment: BlogContentComment[],
+    topics: BlogTopics[],
     canComment?:boolean
 }
 
@@ -42,7 +50,10 @@ const BlogContent:React.FC<BlogContentProps> = (props)=>{
                         <Grid item style={{width:"calc(100%)"}}>
                             <Grid container style={{width:"calc(100%)"}} justifyContent="center">
                                 <Grid item style={{width:"calc(100%)",maxWidth:790}}>
-                                    <div style={{width:"calc(100%)",backgroundColor:"white",borderRadius:"12px",padding:30}}>
+                                    <div style={{width:"calc(100%)",backgroundColor:"white",borderRadius:"12px",padding:30,boxShadow:"0 2px 4px #4385bb12"}}>
+                                        {
+                                            <TopicsCard topics={props.topics} isMobile/>
+                                        }
                                         <StyledMarkdown markdown={props.markdown}/>
                                         <div style={{marginTop:50,marginBottom:20}}>
                                             <Divider/>
@@ -50,10 +61,10 @@ const BlogContent:React.FC<BlogContentProps> = (props)=>{
                                         <AuthorCard author={props.author}/>
                                     </div>
                                     <Grid container justifyContent="center">
-                                        <Grid item style={{marginTop:20}}>
+                                        <Grid item style={{width:"100%",marginTop:20}}>
                                             {
                                                 props.canComment ? <Grid container style={{marginTop:40}}>
-                                                    <Grid item style={{width:"100%",maxWidth:790,backgroundColor:"white",padding:10,borderRadius:"12px",float:"left"}}>
+                                                    <Grid item style={{width:"100%",maxWidth:790,backgroundColor:"white",padding:10,borderRadius:"12px",float:"left",boxShadow:"0 2px 4px #4385bb12"}}>
                                                         <CommentBox comment={props.comment}/>
                                                     </Grid>
                                                 </Grid> : <></>
@@ -61,7 +72,7 @@ const BlogContent:React.FC<BlogContentProps> = (props)=>{
                                         </Grid>
                                     </Grid>
                                     <Grid container justifyContent="center">
-                                        <Grid item style={{marginTop:60,width:"calc(100%)",backgroundColor:"white",borderRadius:12,padding:30}}>
+                                        <Grid item style={{marginTop:60,width:"calc(100%)",backgroundColor:"white",borderRadius:12,padding:30,boxShadow:"0 2px 4px #4385bb12"}}>
                                             <ExternalLinksCard/>
                                         </Grid>
                                     </Grid>
@@ -76,7 +87,7 @@ const BlogContent:React.FC<BlogContentProps> = (props)=>{
                     <Grid item>
                         <Grid container>
                             <Grid item>
-                                <div style={{width:"100%",maxWidth:790,backgroundColor:"white",padding:40,borderRadius:"12px",float:"left"}}>
+                                <div style={{width:"100%",maxWidth:790,backgroundColor:"white",padding:40,borderRadius:"12px",float:"left",boxShadow:"0 2px 4px #4385bb12"}}>
                                     <StyledMarkdown markdown={props.markdown}/>
                                     <div style={{marginTop:50,marginBottom:20}}>
                                         <Divider/>
@@ -91,7 +102,7 @@ const BlogContent:React.FC<BlogContentProps> = (props)=>{
                         </Grid>
                         {
                             props.canComment ? <Grid container style={{marginTop:40}}>
-                                <Grid item style={{width:"100%",maxWidth:790,backgroundColor:"white",padding:10,borderRadius:"12px",float:"left"}}>
+                                <Grid item style={{width:"100%",maxWidth:790,backgroundColor:"white",padding:10,borderRadius:"12px",float:"left",boxShadow:"0 2px 4px #4385bb12"}}>
                                     <CommentBox comment={props.comment}/>
                                 </Grid>
                             </Grid> : <></>
@@ -100,7 +111,12 @@ const BlogContent:React.FC<BlogContentProps> = (props)=>{
                     <Grid item style={{height:"calc(100%)",marginLeft:30}}>
                         <div style={{width:"300px",height:"100%"}}>
                             <div style={{width:"300px",float:"left",position:"sticky",top:30,bottom:200}}>
-                                <div style={{backgroundColor:"white",borderRadius:"12px",marginBottom:40,padding:20}}>
+                                {
+                                    props.topics ? <div style={{marginBottom:40}}>
+                                        <TopicsCard topics={props.topics}/>
+                                    </div> : <></>
+                                }
+                                <div style={{marginBottom:40}}>
                                     <AuthorCard author={props.author}/>
                                 </div>
                                 {/*<div style={{backgroundColor:"white",borderRadius:"12px",padding:10}}>*/}
@@ -111,7 +127,6 @@ const BlogContent:React.FC<BlogContentProps> = (props)=>{
                     </Grid>
                 </Grid>
             </Hidden>
-            <div style={{marginBottom:64}}/>
         </Grid>
     </Grid>
 }

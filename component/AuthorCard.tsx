@@ -5,7 +5,7 @@ import {GITHUB_ICON, TWITTER_ICON} from "../const/Icon";
 import Link from "next/link";
 
 const AuthorCard:React.FC<{author:BlogAuthor}> = (props)=>{
-    return <div>
+    return <div style={{backgroundColor:"white",borderRadius:12,padding:20,boxShadow:"0 2px 4px #4385bb12"}}>
         <ListItem alignItems="flex-start" style={{padding:0}}>
             <ListItemAvatar>
                 <Avatar style={{backgroundColor:"#000"}} alt="Remy Sharp" src={props.author.avatar} />
