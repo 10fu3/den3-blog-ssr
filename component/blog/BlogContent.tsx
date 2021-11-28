@@ -116,12 +116,9 @@ const BlogContent:React.FC<BlogContentProps> = (props)=>{
                                         <TopicsCard topics={props.topics}/>
                                     </div> : <></>
                                 }
-                                <div style={{marginBottom:40}}>
+                                <div style={{marginBottom:44.5}}>
                                     <AuthorCard author={props.author}/>
                                 </div>
-                                {/*<div style={{backgroundColor:"white",borderRadius:"12px",padding:10}}>*/}
-                                {/*    <ExternalLinksCard/>*/}
-                                {/*</div>*/}
                             </div>
                         </div>
                     </Grid>
